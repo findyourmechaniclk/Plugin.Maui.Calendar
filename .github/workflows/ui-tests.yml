@@ -12,7 +12,7 @@ on:
 # A new push to a pull request cancels the run for the previous one; every merge into main is checked.
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+  cancel-in-progress: true
 
 # The SDK, the workload set and Xcode the tests were last checked with. Each .NET for iOS version needs one Xcode
 # version (the workload set 10.0.401.1 brings .NET for iOS 27, which needs Xcode 27), so update them together.
